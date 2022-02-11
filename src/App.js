@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mode:'welcome',
+      mode:'read',
       subject:{title:'Web',sub:'World Wide Web!'},
       welcome:{title:'Welcome', desc:'Hello, react'},
       contents:[
@@ -30,9 +30,18 @@ class App extends Component {
     }
     return (
       <div className="App">
-         <Subject 
+         {/* <Subject 
             title={this.state.subject.title} 
-            sub={this.state.subject.sub}></Subject>
+            sub={this.state.subject.sub}></Subject> */}
+         <header>
+           <h1><a href="/" onClick={function(e){
+             e.preventDefault();
+            //  this.state.mode = "welcome";
+             this.setState({
+               mode:'welcome'
+             })
+           }.bind(this)}>{this.state.subject.title}</a></h1>
+         </header>
          <Subject title="react" sub="world wide web!"></Subject>
          <TOC data={this.state.contents}></TOC>
          <Content title={_title} desc={_desc}></Content>
