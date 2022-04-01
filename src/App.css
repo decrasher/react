@@ -1,0 +1,13 @@
+.App {
+    margin: 20px;
+    width: 100px;
+    height: 70px;
+    padding: 1px;
+    background-color: aquamarine;
+    border: 2px;
+    border-style: ridge;
+}
+.Subject{
+    background-color: rgb(168, 113, 71);
+
+}

@@ -6,6 +6,8 @@ import CreateContent from './components/CreateContent';
 import UpdateContent from './components/UpdateContent';
 import Subject from './components/Subject';
 import Control from './components/Control';
+import firebase from "./firebase";
+console.log(firebase);
 
 
 class App extends Component {
@@ -13,7 +15,7 @@ class App extends Component {
     super(props);
     this.max_content_id = 3;
     this.state = {
-      mode:'create',
+      mode:'welcome',
       selected_content_id:2,
       subject:{title:'Web',sub:'World Wide Web!'},
       welcome:{title:'Welcome', desc:'Hello, react'},
@@ -23,7 +25,6 @@ class App extends Component {
         {id:3, title:'JavaScript',desc:'JavaScript is for interactive'}
       ]
     }
-    
   }
   getReadContent(){
     var i = 0;
@@ -50,9 +51,9 @@ class App extends Component {
       _article = <CreateContent onSubmit={function(_title, _desc){
         //add content to this.state.contents
         this.max_content_id = this.max_content_id + 1;
-        var _contents = this.state.contents.concat(
-          {id:this.max_content_id, title:_title, desc:_desc}
-        )
+        
+        var _contents =Array.from(this.state.contents);
+        _contents.push({id:this.max_content_id, title:_title, desc:_desc});
         this.setState( 
           {contents : _contents}
         );
@@ -76,7 +77,7 @@ class App extends Component {
         }
 
         this.setState( 
-          {contents : _contents}
+          {contents : _contents,mode:'read'}
         );
         console.log(_title, _desc);
       }.bind(this)}></UpdateContent>
@@ -88,7 +89,7 @@ class App extends Component {
     console.log('App render');
     return (
       <div className="App">
-         <Subject 
+         <Subject className="Subject" 
             title={this.state.subject.title} 
             sub={this.state.subject.sub}
             onChangePage={function(){
@@ -104,6 +105,30 @@ class App extends Component {
             data={this.state.contents}
          ></TOC>
          <Control onChangeMode={function(_mode){
+           if(_mode === 'delete'){
+             if(window.confirm('really?')){
+               var _content = Array.from(this.state.contents);
+               var i = 0 ;
+               while(i < _content.length){
+                 if(_content[i].id === this.state.selected_content_id){
+                   _content.splice(i,1);
+                   break;
+                 }
+
+                 i = i +1;
+               }
+               this.setState({
+                 mode:'welcome',
+                 contents:_content
+               })
+             }
+
+           } else{
+            this.setState({
+              mode:_mode
+            })
+
+           }
            this.setState({
              mode:_mode
            })
