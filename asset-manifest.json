@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/origin%20%20https://github.com/decrasher/react.git/static/css/main.32267484.css",
-    "main.js": "/origin%20%20https://github.com/decrasher/react.git/static/js/main.ad885e45.js",
-    "static/js/787.b701888c.chunk.js": "/origin%20%20https://github.com/decrasher/react.git/static/js/787.b701888c.chunk.js",
-    "index.html": "/origin%20%20https://github.com/decrasher/react.git/index.html",
-    "main.32267484.css.map": "/origin%20%20https://github.com/decrasher/react.git/static/css/main.32267484.css.map",
-    "main.ad885e45.js.map": "/origin%20%20https://github.com/decrasher/react.git/static/js/main.ad885e45.js.map",
-    "787.b701888c.chunk.js.map": "/origin%20%20https://github.com/decrasher/react.git/static/js/787.b701888c.chunk.js.map"
+    "main.css": "/decrasher/react.git/static/css/main.32267484.css",
+    "main.js": "/decrasher/react.git/static/js/main.dde46c7c.js",
+    "static/js/787.b701888c.chunk.js": "/decrasher/react.git/static/js/787.b701888c.chunk.js",
+    "index.html": "/decrasher/react.git/index.html",
+    "main.32267484.css.map": "/decrasher/react.git/static/css/main.32267484.css.map",
+    "main.dde46c7c.js.map": "/decrasher/react.git/static/js/main.dde46c7c.js.map",
+    "787.b701888c.chunk.js.map": "/decrasher/react.git/static/js/787.b701888c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.32267484.css",
-    "static/js/main.ad885e45.js"
+    "static/js/main.dde46c7c.js"
   ]
 }
